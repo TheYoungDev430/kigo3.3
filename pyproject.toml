@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "kigo-gui-framework"
+version = "3.2"
+description = "Kigo has Time Freeze Debugging and a Visual Inspector now."
+readme = "README.md"
+license = { text = "Zlib" }
+
+authors = [
+    { name = "Anand Kumar" }
+]
+
+requires-python = ">=3.9"
+
+keywords = [
+    "gui",
+    "qt",
+    "pyqt",
+    "webengine",
+    "opengl",
+    "wasm",
+    "android",
+    "chromeos",
+    "framework"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: zlib/libpng License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+]
+
+# -----------------------------
+# Core Dependencies
+# -----------------------------
+dependencies = [
+    "PyQt6",
+	"pybullet",
+	"pybullet-data",
+    "PyQt6-WebEngine",
+    "PyOpenGL",
+    "wasmtime",
+]
+
+
+[project.urls]
+
+
+# -----------------------------
+# CLI Commands
+# -----------------------------
+[project.scripts]
+kigo = "kigo.cli.main:main"
+
+
+# -----------------------------
+# setuptools configuration
+# -----------------------------
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["kigo*"]
